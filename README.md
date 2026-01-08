@@ -1,17 +1,46 @@
-# JWT Inspector 🔐
+#  JWT Inspector
 
-A lightweight security tool that analyzes JSON Web Tokens (JWTs) for common vulnerabilities and misconfigurations.
+JWT Inspector is a lightweight security analysis tool for inspecting JSON Web Tokens (JWTs) and identifying common authentication misconfigurations.
 
-## Features
+It is designed as:
+- a reusable Python security library
+- a local web application (Flask)
+- a containerized, reproducible security tool (Docker)
+
+It is designed to:
+
+- Assess  
+
+---
+
+##  Why JWT Inspector Exists
+
+JWT misconfigurations are a frequent cause of:
+- authentication bypass
+- privilege escalation
+- broken session handling
+
+JWT Inspector helps developers and security professionals:
+- understand JWT internals
+- identify insecure token configurations
+- safely analyze tokens in an isolated environment
+
+---
+
+##  Features
+
 - Decode JWT headers and payloads
 - Detect insecure algorithms (`alg=none`)
-- Identify expired tokens
-- Verify HS256 signatures
-- Highlight risky configurations
+- Identify expired or non-expiring tokens
+- Highlight missing standard claims (`iss`, `aud`, `sub`)
+- Verify HS256 signatures (optional secret)
+- Clean web UI for interactive analysis
+- Fully containerized for safe execution
 
-## Usage
-```bash
-python jwt_inspector.py <token> --secret <optional-secret>
+---
+
+## Architecture Overview
+
 
 jwt-inspector/
 ├── README.md

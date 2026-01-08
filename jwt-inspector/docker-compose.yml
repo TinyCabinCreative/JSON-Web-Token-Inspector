@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  jwt-inspector:
+    build: .
+    ports:
+      - "5000:5000"
+    container_name: jwt-inspector
+    restart: unless-stopped

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JWT Inspector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 JWT Inspector</h1>
+    <p class="subtitle">Analyze JSON Web Tokens for common security issues</p>
+
+    <form method="POST">
+      <label>JWT Token</label>
+      <textarea name="token" rows="5" required></textarea>
+
+      <label>HS256 Secret (optional)</label>
+      <input type="text" name="secret">
+
+      <button type="submit">Inspect Token</button>
+    </form>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if results %}
+      <h2>Header</h2>
+      <pre>{{ results.header | tojson(indent=2) }}</pre>
+
+      <h2>Payload</h2>
+      <pre>{{ results.payload | tojson(indent=2) }}</pre>
+
+      <h2>Security Findings</h2>
+      {% if results.findings %}
+        <ul>
+          {% for f in results.findings %}
+            <li class="{{ f.severity|lower }}">
+              <strong>{{ f.severity }}</strong>: {{ f.message }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="ok">No security issues detected.</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</body>
+</html>
