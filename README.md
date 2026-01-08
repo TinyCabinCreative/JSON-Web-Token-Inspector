@@ -8,8 +8,20 @@ It is designed as:
 - a containerized, reproducible security tool (Docker)
 
 It is designed to:
+To Stakeholders:
+“It’s a safety check that helps teams catch authentication mistakes before they become security incidents."
 
-- Assess  
+To Nerds: 
+- It reduces the risk of account takeovers, data leaks, and compliance issues — without slowing down developers.
+- It runs locally, doesn’t send data anywhere, and is isolated so sensitive information isn’t exposed.
+- By separating the analysis logic from the interface and containerizing it, I made something that could realistically be used by a team.
+- JWTs fail more often due to misconfiguration, not cryptographic failure.
+
+This tool looks for:
+alg=none (signature bypass)
+expired tokens
+missing standard claims
+invalid HS256 signatures
 
 ---
 
