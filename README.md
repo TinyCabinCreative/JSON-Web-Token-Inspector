@@ -7,7 +7,8 @@ It is designed as:
 - a local web application (Flask)
 - a containerized, reproducible security tool (Docker)
 
-It is designed to:
+**It is designed to**
+
 To Stakeholders:
 “It’s a safety check that helps teams catch authentication mistakes before they become security incidents."
 
