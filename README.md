@@ -1,4 +1,7 @@
 #  JWT Inspector
+Open Project in your favorite code editor and run in terminal -
+" python jwt-inspector\app.py "
+UI should run on your LocalHost or preffered method of running.
 
 JWT Inspector is a lightweight security analysis tool for inspecting JSON Web Tokens (JWTs) and identifying common authentication misconfigurations.
 
@@ -9,9 +12,16 @@ It is designed as:
 
 It is designed to:
 
-- Assess  
+Provide decoding, verification, and security analysis of JWTs.
+pyth
+
+Tokens can be generated from: https://www.scottbrady.io/tools/jwt
 
 ---
+SCREENSHOTS
+---
+![alt text](image.png)
+![alt text](image-1.png)
 
 ##  Why JWT Inspector Exists
 
